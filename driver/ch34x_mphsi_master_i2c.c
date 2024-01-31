@@ -25,7 +25,7 @@ static int ch34x_i2c_check_dev(struct ch34x_device *ch34x_dev, u8 addr)
 	ch34x_dev->bulkout_buf[1] = CH341_CMD_I2C_STM_STA;
 	ch34x_dev->bulkout_buf[2] = CH341_CMD_I2C_STM_OUT; /* NOTE: must be zero length otherwise it
 					  messes up the device */
-	ch34x_dev->bulkout_buf[3] = (addr << 1) | 0x01;
+	ch34x_dev->bulkout_buf[3] = (addr << 1);
 	ch34x_dev->bulkout_buf[4] = CH341_CMD_I2C_STM_STO;
 	ch34x_dev->bulkout_buf[5] = CH341_CMD_I2C_STM_END;
 
